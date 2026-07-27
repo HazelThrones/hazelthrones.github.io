@@ -1,1 +1,945 @@
-h
+/* ===========================
+   HAZELVERSE - MIDNIGHT COSMOS
+   Part 1
+=========================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+
+background:#05040d;
+color:#ffffff;
+
+font-family:'Poppins',sans-serif;
+
+overflow-x:hidden;
+
+line-height:1.7;
+
+}
+
+.container{
+
+width:90%;
+
+max-width:1200px;
+
+margin:auto;
+
+}
+
+section{
+
+padding:100px 0;
+
+position:relative;
+
+}
+
+h1,h2,h3,h4{
+
+font-family:'Cinzel',serif;
+
+letter-spacing:2px;
+
+}
+
+a{
+
+text-decoration:none;
+
+color:white;
+
+transition:.4s;
+
+}
+
+ul{
+
+list-style:none;
+
+}
+
+/* NAVIGATION */
+
+header{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+z-index:1000;
+
+background:rgba(5,4,13,.75);
+
+backdrop-filter:blur(15px);
+
+}
+
+nav{
+
+width:90%;
+
+max-width:1200px;
+
+margin:auto;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:20px 0;
+
+}
+
+.logo{
+
+font-size:28px;
+
+font-weight:bold;
+
+color:#FFD86B;
+
+letter-spacing:3px;
+
+}
+
+nav ul{
+
+display:flex;
+
+gap:30px;
+
+}
+
+nav a{
+
+font-size:15px;
+
+font-weight:500;
+
+}
+
+nav a:hover{
+
+color:#FFD86B;
+
+}
+
+/* HERO */
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:120px 20px;
+
+background:
+
+radial-gradient(circle at top,#2a195d 0%,#090612 45%,#05040d 100%);
+
+overflow:hidden;
+
+}
+
+.hero-content{
+
+max-width:850px;
+
+z-index:5;
+
+}
+
+.hero h4{
+
+color:#FFD86B;
+
+margin-bottom:15px;
+
+font-size:18px;
+
+}
+
+.hero h1{
+
+font-size:72px;
+
+margin-bottom:15px;
+
+}
+
+.hero h2{
+
+font-size:30px;
+
+font-weight:400;
+
+margin-bottom:25px;
+
+color:#d3c5ff;
+
+}
+
+.hero p{
+
+font-size:19px;
+
+max-width:700px;
+
+margin:auto;
+
+margin-bottom:40px;
+
+opacity:.9;
+
+}
+
+/* BUTTONS */
+
+.hero-buttons{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.primary-btn{
+
+background:#FFD86B;
+
+color:#111;
+
+padding:15px 36px;
+
+border-radius:50px;
+
+font-weight:700;
+
+transition:.4s;
+
+display:inline-block;
+
+}
+
+.primary-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 0 30px #FFD86B;
+
+}
+
+.secondary-btn{
+
+border:2px solid #FFD86B;
+
+padding:15px 36px;
+
+border-radius:50px;
+
+}
+
+.secondary-btn:hover{
+
+background:#FFD86B;
+
+color:#111;
+
+}
+
+/* LOADER */
+
+#loader{
+
+position:fixed;
+
+inset:0;
+
+background:#05040d;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:99999;
+
+transition:1s;
+
+}
+
+.loader-content{
+
+text-align:center;
+
+}
+
+.loader-content h1{
+
+font-size:42px;
+
+color:#FFD86B;
+
+margin-bottom:10px;
+
+}
+
+.loader-content p{
+
+letter-spacing:4px;
+
+opacity:.7;
+
+}
+/* ===========================
+   ABOUT
+=========================== */
+
+#about{
+
+background:#090612;
+
+text-align:center;
+
+}
+
+#about h2,
+#books h2,
+#poetry h2,
+#reader h2,
+#contact h2{
+
+font-size:42px;
+
+margin-bottom:30px;
+
+color:#FFD86B;
+
+}
+
+#about p{
+
+max-width:850px;
+
+margin:20px auto;
+
+font-size:18px;
+
+opacity:.92;
+
+}
+
+/* ===========================
+   BOOK
+=========================== */
+
+.book-card{
+
+display:grid;
+
+grid-template-columns:320px 1fr;
+
+gap:60px;
+
+align-items:center;
+
+margin-top:60px;
+
+}
+
+.book-image img{
+
+width:100%;
+
+border-radius:18px;
+
+box-shadow:0 0 40px rgba(255,216,107,.35);
+
+transition:.5s;
+
+}
+
+.book-image img:hover{
+
+transform:scale(1.05);
+
+}
+
+.book-info h3{
+
+font-size:36px;
+
+margin-bottom:20px;
+
+}
+
+.book-info p{
+
+font-size:18px;
+
+margin-bottom:30px;
+
+opacity:.9;
+
+}
+
+/* ===========================
+   POETRY
+=========================== */
+
+.poetry-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:30px;
+
+margin-top:50px;
+
+}
+
+.poetry-card{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,216,107,.2);
+
+border-radius:18px;
+
+padding:30px;
+
+transition:.45s;
+
+backdrop-filter:blur(12px);
+
+}
+
+.poetry-card:hover{
+
+transform:translateY(-12px);
+
+box-shadow:0 0 25px rgba(255,216,107,.25);
+
+}
+
+.poetry-card h3{
+
+margin-bottom:15px;
+
+color:#FFD86B;
+
+}
+
+/* ===========================
+   LUCKY READER
+=========================== */
+
+.reader-box{
+
+margin-top:40px;
+
+text-align:center;
+
+background:rgba(255,255,255,.05);
+
+padding:50px;
+
+border-radius:20px;
+
+}
+
+#fortuneText{
+
+margin-top:30px;
+
+font-size:22px;
+
+color:#FFD86B;
+
+min-height:40px;
+
+}
+
+/* ===========================
+   CONTACT
+=========================== */
+
+form{
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+margin-top:40px;
+
+}
+
+input,
+textarea{
+
+padding:18px;
+
+border:none;
+
+border-radius:12px;
+
+background:#161327;
+
+color:white;
+
+font-size:16px;
+
+}
+
+input:focus,
+textarea:focus{
+
+outline:2px solid #FFD86B;
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+padding:70px 0;
+
+background:#04030a;
+
+text-align:center;
+
+}
+
+.footer-links{
+
+margin:25px 0;
+
+display:flex;
+
+justify-content:center;
+
+gap:30px;
+
+flex-wrap:wrap;
+
+}
+
+.footer-links a:hover{
+
+color:#FFD86B;
+
+}
+
+.copyright{
+
+margin-top:25px;
+
+opacity:.7;
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:900px){
+
+.hero h1{
+
+font-size:48px;
+
+}
+
+.hero h2{
+
+font-size:22px;
+
+}
+
+.book-card{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+nav{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+nav ul{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:15px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+.hero p{
+
+font-size:16px;
+
+}
+
+#about h2,
+#books h2,
+#poetry h2,
+#reader h2,
+#contact h2{
+
+font-size:32px;
+
+}
+
+.primary-btn,
+.secondary-btn{
+
+width:100%;
+
+text-align:center;
+
+}
+
+}
+/*==================================
+    HAZELVERSE CSS - PART 3
+===================================*/
+
+/* HERO GLOW */
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:700px;
+
+height:700px;
+
+background:radial-gradient(circle,
+rgba(140,90,255,.25),
+transparent 70%);
+
+top:-200px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+filter:blur(40px);
+
+animation:pulse 8s infinite ease-in-out;
+
+z-index:0;
+
+}
+
+@keyframes pulse{
+
+0%,100%{
+
+transform:translateX(-50%) scale(1);
+
+opacity:.5;
+
+}
+
+50%{
+
+transform:translateX(-50%) scale(1.2);
+
+opacity:1;
+
+}
+
+}
+
+/* STAR BACKGROUND */
+
+#stars{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+z-index:-2;
+
+background-image:
+
+radial-gradient(white 1px, transparent 1px),
+
+radial-gradient(#FFD86B 1px, transparent 1px);
+
+background-size:90px 90px,150px 150px;
+
+background-position:0 0,45px 45px;
+
+opacity:.35;
+
+animation:starMove 90s linear infinite;
+
+}
+
+@keyframes starMove{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-500px);
+
+}
+
+}
+
+/* FLOATING PARTICLES */
+
+#particles{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:-1;
+
+}
+
+#particles::before{
+
+content:"";
+
+position:absolute;
+
+width:220%;
+
+height:220%;
+
+background-image:
+
+radial-gradient(circle,#FFD86B 1px,transparent 1px);
+
+background-size:65px 65px;
+
+opacity:.12;
+
+animation:particles 70s linear infinite;
+
+}
+
+@keyframes particles{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+100%{
+
+transform:translateY(-700px);
+
+}
+
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#07060d;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#FFD86B;
+
+border-radius:20px;
+
+}
+
+/* SECTION ANIMATION */
+
+section{
+
+animation:fadeUp .9s ease;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* GOLD TEXT */
+
+.gold{
+
+color:#FFD86B;
+
+}
+
+/* IMAGE EFFECT */
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+
+/* FOOTER GLOW */
+
+footer{
+
+border-top:1px solid rgba(255,216,107,.2);
+
+box-shadow:0 -5px 50px rgba(255,216,107,.05);
+
+}
+
+/* BUTTON EFFECT */
+
+.primary-btn{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.primary-btn::after{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-120%;
+
+width:100%;
+
+height:100%;
+
+background:rgba(255,255,255,.3);
+
+transform:skewX(-25deg);
+
+transition:.7s;
+
+}
+
+.primary-btn:hover::after{
+
+left:130%;
+
+}
+
+/* BOOK HOVER */
+
+.book-card{
+
+transition:.5s;
+
+}
+
+.book-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+/* END */
